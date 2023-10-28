@@ -16,3 +16,12 @@
 При проведении тестов возможно появление капчи в форме авторизации. В этом случае сразу после ввода данных в полях логин и пароль нужно кликнуть в поле ввода капчи и за 20 сек. ввести текст с картинки. Если не успеть это сделать, тест будет провален.
 
 Негативные тесты на авторизацию с пустым паролем отмечены как xfail, т.к. все время падают - на сайте нет предупреждения о вводе пароля.
+
+
+Инструменты, которые применялись для тестирования:
+Для тестирования сайта был использован интсрумент Selenium;
+Для определения локаторов использовались следующие инструменты: DevTools, ChroPath.
+Запуск тестов:
+python -m pytest -v --driver Chrome --driver-path //Driver/chromedriver.exe tests/test_auth_page_elements.py
+python -m pytest -v --driver Chrome --driver-path //Driver/chromedriver.exe tests/test_negative_auth.py
+python -m pytest -v --driver Chrome --driver-path //Driver/chromedriver.exe tests/test_positive_auth.py
